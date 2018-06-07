@@ -1,9 +1,9 @@
 import { Actor, ActorID } from './actor'
 import { ActorOwner } from './actor-owner'
 import { ActorRegistrator } from './actor-registrator'
+import { IdGeneratorCreator } from './actors'
 import { Destroyer } from './destroyer'
 import { IdGenerator } from './id-generator'
-import { IdGeneratorCreator } from './index'
 import { Sender } from './sender'
 
 export class Spawner {
