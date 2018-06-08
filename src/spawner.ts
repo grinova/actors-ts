@@ -35,7 +35,7 @@ export class Spawner {
   spawn(parentId: ActorID, actor: Actor): ActorID {
     const id = this.idGenerator.newId()
     const spawner = new Spawner(
-      this.idGeneratorCreator(parentId),
+      this.idGeneratorCreator(id),
       this.idGeneratorCreator,
       this.registrator,
       this.sender,
