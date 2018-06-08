@@ -38,7 +38,7 @@ implements MessageHandler {
 
   init(): void {
     if (this.actor.onInit) {
-      this.actor.onInit(this.onSend, this.onSpawn, this.onExit)
+      this.actor.onInit(this.id, this.onSend, this.onSpawn, this.onExit)
     }
   }
 
