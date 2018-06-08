@@ -46,9 +46,10 @@ implements Destroyer, Sender {
   }
 
   send(address: ActorID, message: Message): void {
-    this.router.route({ address, message })
-    if (this.listener && this.listener.onMessage) {
-      this.listener.onMessage(address, message)
+    if (this.router.route({ address, message })) {
+      if (this.listener && this.listener.onMessage) {
+        this.listener.onMessage(address, message)
+      }
     }
   }
 
