@@ -28,7 +28,7 @@ implements Destroyer, Sender {
   private rootSpawner: Spawner
   private listener?: ActorsListener
 
-  constructor(rootId: string = '', idGeneratorCreator: IdGeneratorCreator = defaultIdGeneratorCreator) {
+  constructor(idGeneratorCreator: IdGeneratorCreator = defaultIdGeneratorCreator, rootId: string = '') {
     this.rootId = rootId
     this.router = new MessageRouter()
     this.rootSpawner = new Spawner(
