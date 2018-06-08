@@ -43,7 +43,9 @@ implements MessageHandler {
   }
 
   handle(message: Message): void {
-    this.actor.onMessage(message, this.onSend, this.onSpawn, this.onExit)
+    if (this.actor.onMessage) {
+      this.actor.onMessage(message, this.onSend, this.onSpawn, this.onExit)
+    }
   }
 
   private onSend: Send = (id, message) => {

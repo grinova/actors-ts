@@ -9,5 +9,5 @@ export type OnMessage = (message: Message, send: Send, spawn: Spawn, exit: Exit)
 
 export interface Actor {
   onInit?: OnInit
-  onMessage: OnMessage
+  onMessage?: OnMessage
 }
