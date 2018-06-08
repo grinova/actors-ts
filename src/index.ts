@@ -13,6 +13,8 @@ import {
   ActorsListener as _ActorsListener,
   IdGeneratorCreator as _IdGeneratorCreator
   } from './actors'
+import { IdGenerator as _IdGenerator } from './id-generator'
+import { NumericIdGenerator as _NumericIdGenerator } from './numeric-id-generator'
 
 export type Actor = _Actor
 export const Actors = _Actors
@@ -20,7 +22,10 @@ export type ActorID = _ActorID
 export type Exit = _Exit
 export type Actors = _Actors
 export type ActorsListener = _ActorsListener
+export type IdGenerator = _IdGenerator
 export type IdGeneratorCreator = _IdGeneratorCreator
+export type NumericIdGenerator = _NumericIdGenerator
+export const NumericIdGenerator = _NumericIdGenerator
 export type Message = _Message
 export type OnInit = _OnInit
 export type OnMessage = _OnMessage
