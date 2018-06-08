@@ -5,8 +5,8 @@ import {
   } from './actor'
 import {
   Actors as _Actors,
-  IdGeneratorCreator as _IdGeneratorCreator,
-  MessageListener as _MessageListener
+  ActorsListener as _ActorsListener,
+  IdGeneratorCreator as _IdGeneratorCreator
   } from './actors'
 
 export namespace actors {
@@ -16,5 +16,5 @@ export namespace actors {
   export type Actors = _Actors
   export type IdGeneratorCreator = _IdGeneratorCreator
   export type Message = _Message
-  export type MessageListener = _MessageListener
+  export type ActorsListener = _ActorsListener
 }
