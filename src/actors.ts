@@ -21,6 +21,12 @@ const defaultIdGeneratorCreator: IdGeneratorCreator = (parentId) => {
   return new NumericIdGenerator(parentId)
 }
 
+export interface ActorsProps {
+  idGeneratorCreator?: IdGeneratorCreator
+  rootId?: string
+  rootIdGenerator?: IdGenerator
+}
+
 export class Actors
 implements Destroyer, Sender {
   private rootId: ActorID
@@ -28,11 +34,14 @@ implements Destroyer, Sender {
   private rootSpawner: Spawner
   private listener?: ActorsListener
 
-  constructor(idGeneratorCreator: IdGeneratorCreator = defaultIdGeneratorCreator, rootId: string = '') {
+  constructor(props?: ActorsProps) {
+    const idGeneratorCreator = props && props.idGeneratorCreator || defaultIdGeneratorCreator
+    const rootId = props && props.rootId || ''
+    const rootIdGenerator = props && props.rootIdGenerator || idGeneratorCreator(rootId)
     this.rootId = rootId
     this.router = new MessageRouter()
     this.rootSpawner = new Spawner(
-      idGeneratorCreator(this.rootId),
+      rootIdGenerator,
       idGeneratorCreator,
       this.router,
       this,
