@@ -16,7 +16,7 @@ import {
 import { IdGenerator as _IdGenerator } from './id-generator'
 import { NumericIdGenerator as _NumericIdGenerator } from './numeric-id-generator'
 
-export type Actor = _Actor
+export type Actor<M extends Message = Message> = _Actor<M>
 export const Actors = _Actors
 export type ActorID = _ActorID
 export type Exit = _Exit
@@ -28,6 +28,6 @@ export type NumericIdGenerator = _NumericIdGenerator
 export const NumericIdGenerator = _NumericIdGenerator
 export type Message = _Message
 export type OnInit = _OnInit
-export type OnMessage = _OnMessage
+export type OnMessage<M extends Message = Message> = _OnMessage<M>
 export type Send = _Send
 export type Spawn = _Spawn

@@ -5,9 +5,9 @@ export type Send = (id: ActorID, message: Message) => void
 export type Exit = (message?: Message) => void
 
 export type OnInit = (selfId: ActorID, send: Send, spawn: Spawn, exit: Exit) => void
-export type OnMessage = (message: Message, send: Send, spawn: Spawn, exit: Exit) => void
+export type OnMessage<M extends Message = Message> = (message: M, send: Send, spawn: Spawn, exit: Exit) => void
 
-export interface Actor {
+export interface Actor<M extends Message = Message> {
   onInit?: OnInit
-  onMessage?: OnMessage
+  onMessage?: OnMessage<M>
 }
